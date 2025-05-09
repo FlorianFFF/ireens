@@ -20,7 +20,7 @@ body {
     transition: opacity 0.5s ease;
     position: relative;
     background-color: #f5f1eb; /* Base color */
-    background-image: url('/ireens/bg.jpg');
+    background-image: url('/ireens/bg3.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -34,7 +34,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(245, 241, 235, 0.9); /* Increased transparency to show more of the background image */
+    background-color: rgba(245, 241, 235, 0.45); /* Increased transparency to show more of the background image */
     z-index: -1;
     pointer-events: none; /* Makes sure the overlay doesn't interfere with clicks */
 }
