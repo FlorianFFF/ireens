@@ -1,6 +1,14 @@
+/* Force Light Mode */
+:root {
+    color-scheme: light only;
+}
+
 /* General Body Styles */
 html {
     scroll-behavior: smooth;
+    background-color: #f5f1eb;
+    color: #333333;
+    color-scheme: light only;
 }
 
 body {
