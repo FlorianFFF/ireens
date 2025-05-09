@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="lightbox-nav lightbox-prev"><span>&lt;</span></div>
             <div class="lightbox-nav lightbox-next"><span>&gt;</span></div>
             <img class="lightbox-img">
-            <div class="lightbox-caption"></div>
         </div>
     `;
     document.body.appendChild(lightboxContainer);
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeBtn = document.querySelector('.lightbox-close');
     const prevBtn = document.querySelector('.lightbox-prev');
     const nextBtn = document.querySelector('.lightbox-next');
-    const caption = document.querySelector('.lightbox-caption');
     
     let currentImageIndex = 0;
     const galleryImages = document.querySelectorAll('.gallery img');
@@ -35,18 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to open lightbox with an image
     function openLightbox(imgElement) {
         lightboxImg.src = imgElement.src;
-        updateCaption();
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent scrolling
         
         // Show/hide nav buttons based on position
         updateNavButtons();
-    }
-    
-    // Update the caption based on alt text
-    function updateCaption() {
-        const altText = galleryImages[currentImageIndex].alt || '';
-        caption.textContent = altText;
     }
     
     // Show/hide navigation buttons based on current image
@@ -93,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Update image and details
             lightboxImg.src = galleryImages[currentImageIndex].src;
-            updateCaption();
             updateNavButtons();
             
             // Fade back in
