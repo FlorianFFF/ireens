@@ -90,7 +90,7 @@ header .header-logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    /* Further reduced right side crop to prevent cut-off */
+    /* Desktop cropping - will be adjusted for mobile */
     clip-path: inset(10px 5px 20px 3px);
     /* Layered drop shadows with decreasing opacity at increasing distances */
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.08)) 
@@ -556,6 +556,13 @@ footer p::after {
     .image-container {
         height: 180px;
     }
+    
+    /* Adjust logo for tablets */
+    header .header-logo {
+        width: 85%;
+        /* Adjusted clip path for medium screens */
+        clip-path: inset(5px 3px 10px 3px);
+    }
 }
 
 @media (max-width: 480px) {
@@ -574,5 +581,17 @@ footer p::after {
     }
     .audio-player h3 {
         font-size: 1.1rem;
+    }
+    
+    /* Fix logo cropping on mobile phones */
+    header .header-logo {
+        width: 90%;
+        clip-path: inset(5px 4px 5px 4px);
+        /* Keep box-shadow for subtle glow effect */
+        box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.25);
+    }
+    
+    header {
+        padding-top: 2rem;
     }
 }
