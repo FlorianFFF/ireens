@@ -13,7 +13,7 @@ body {
     transition: opacity 0.5s ease;
     position: relative;
     background-color: #f5f1eb; /* Base color */
-    background-image: url('/bg.jpg');
+    background-image: url('/ireens/bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
