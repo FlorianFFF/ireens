@@ -169,8 +169,10 @@ main {
 /* Image Gallery - CSS Grid */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: auto;
     gap: 2rem;
+    grid-auto-flow: row;
     margin: 2.5rem 0;
     position: relative;
 }
@@ -594,4 +596,31 @@ footer p::after {
     header {
         padding-top: 2rem;
     }
+}
+
+/* IMPORTANT: Full-width image container overrides - positioned AFTER regular .image-container */
+.image-container.full-width {
+    grid-column: 1 / -1 !important; /* force span across all columns */
+    height: auto !important; /* let image determine height fully */
+    overflow: visible !important; /* allow full image to be shown */
+    box-shadow: none !important; /* remove hover shadow */
+    border: none !important; /* optional cleaner look */
+    min-height: unset !important; /* Override any min-height */
+    max-height: unset !important; /* Override any max-height */
+}
+
+.image-container.full-width:hover {
+    transform: none !important; /* disable hover lift */
+}
+
+.image-container.full-width::before {
+    content: none !important; /* disable decorative overlay */
+}
+
+.image-container.full-width img {
+    width: 90%; /* make a bit smaller than full width */
+    height: auto !important; /* Ensure height is auto */
+    object-fit: contain;
+    display: block;
+    margin: 0 auto; /* center horizontally */
 }
